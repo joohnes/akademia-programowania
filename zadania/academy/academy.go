@@ -1,5 +1,7 @@
 package academy
 
+import "math"
+
 type Student struct {
 	Name      string
 	Grades    []int
@@ -11,7 +13,14 @@ type Student struct {
 // slice containing all grades received during a
 // semester, rounded to the nearest integer.
 func AverageGrade(grades []int) int {
-	panic("not implemented")
+	var sum float64
+	for grade := range grades {
+		sum = sum + float64(grades[grade])
+	}
+	if len(grades) == 0 {
+		return 0
+	}
+	return int(math.Round(sum / float64(len(grades))))
 }
 
 // AttendancePercentage returns a percentage of class
@@ -22,7 +31,17 @@ func AverageGrade(grades []int) int {
 // floating-point number ranging from  0 to 1,
 // with 2 digits of precision.
 func AttendancePercentage(attendance []bool) float64 {
-	panic("not implemented")
+	var count_truths int
+
+	for _, i := range attendance {
+		if i {
+			count_truths += 1
+		}
+	}
+	if count_truths == 0 {
+		return 0
+	}
+	return float64(count_truths) / float64(len(attendance))
 }
 
 // FinalGrade returns a final grade achieved by a student,
@@ -37,7 +56,18 @@ func AttendancePercentage(attendance []bool) float64 {
 // decreased by 1. If the student's attendance is below 60%, average
 // grade is 1 or project grade is 1, the final grade is 1.
 func FinalGrade(s Student) int {
-	panic("not implemented")
+	avgGrade := AverageGrade(s.Grades)
+	attd := AttendancePercentage(s.Attendace)
+
+	if attd < 0.6 && (avgGrade == 1 || s.Project == 1) {
+		return 1
+	}
+	var projectGrade float64 = float64(avgGrade+s.Project) / 2
+	if attd < 0.8 {
+		projectGrade = -1
+	}
+
+	return int(projectGrade)
 }
 
 // GradeStudents returns a map of final grades for a given slice of
