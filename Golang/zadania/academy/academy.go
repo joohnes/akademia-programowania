@@ -1,6 +1,9 @@
 package academy
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 type Student struct {
 	Name       string
@@ -58,20 +61,22 @@ func FinalGrade(s Student) int {
 	avgGrade := AverageGrade(s.Grades)
 	attd := AttendancePercentage(s.Attendace)
 
-	if attd < 0.6 && (avgGrade == 1 || s.Project == 1) {
+	if attd < 0.6 || (avgGrade == 1 || s.Project == 1) {
 		return 1
 	}
 	var projectGrade float64 = float64(avgGrade+s.Project) / 2
 	if attd < 0.8 {
-		projectGrade = -1
+		projectGrade -= 1
 	}
 
-	return int(projectGrade)
+	return int(math.Round(projectGrade))
 }
 
 // GradeStudents returns a map of final grades for a given slice of
 // Student structs. The key is a student's name and the value is a
 // final grade.
 func GradeStudents(students []Student) map[string]uint8 {
-	panic("not implemented")
+	for i, student := range students {
+		students[i] = fmt.Sprint(FinalGrade(student))
+	}
 }
