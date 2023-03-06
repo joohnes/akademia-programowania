@@ -1,7 +1,6 @@
 package academy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -34,17 +33,17 @@ func AverageGrade(grades []int) int {
 // floating-point number ranging from  0 to 1,
 // with 2 digits of precision.
 func AttendancePercentage(attendance []bool) float64 {
-	var count_truths int
+	var countTruths int
 
 	for _, i := range attendance {
 		if i {
-			count_truths += 1
+			countTruths += 1
 		}
 	}
-	if count_truths == 0 {
+	if countTruths == 0 {
 		return 0
 	}
-	return float64(count_truths) / float64(len(attendance))
+	return float64(countTruths) / float64(len(attendance))
 }
 
 // FinalGrade returns a final grade achieved by a student,
@@ -58,6 +57,7 @@ func AttendancePercentage(attendance []bool) float64 {
 // If the student's attendance is below 80%, the final grade is
 // decreased by 1. If the student's attendance is below 60%, average
 // grade is 1 or project grade is 1, the final grade is 1.
+
 func FinalGrade(s Student) int {
 	avgGrade := AverageGrade(s.Grades)
 	attd := AttendancePercentage(s.Attendace)
@@ -65,7 +65,7 @@ func FinalGrade(s Student) int {
 	if attd < 0.6 || (avgGrade == 1 || s.Project == 1) {
 		return 1
 	}
-	var projectGrade float64 = float64(avgGrade+s.Project) / 2
+	var projectGrade = float64(avgGrade+s.Project) / 2
 	if attd < 0.8 {
 		projectGrade -= 1
 	}
@@ -77,7 +77,12 @@ func FinalGrade(s Student) int {
 // Student structs. The key is a student's name and the value is a
 // final grade.
 func GradeStudents(students []Student) map[string]uint8 {
-	for i, student := range students {
-		students[i] = fmt.Sprint(FinalGrade(student))
+	gradedStudents := map[string]uint8{}
+	if len(students) == 0 {
+		return gradedStudents
 	}
+	for _, student := range students {
+		gradedStudents[student.Name] = uint8(FinalGrade(student))
+	}
+	return gradedStudents
 }
