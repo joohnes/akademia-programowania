@@ -15,14 +15,15 @@ type Student struct {
 // slice containing all grades received during a
 // semester, rounded to the nearest integer.
 func AverageGrade(grades []int) int {
-	var sum float64
-	for grade := range grades {
-		sum = sum + float64(grades[grade])
-	}
 	if len(grades) == 0 {
 		return 0
 	}
-	return int(math.Round(sum / float64(len(grades))))
+	var sumOfGrades float64
+	for _, grade := range grades {
+		sumOfGrades += float64(grade)
+	}
+
+	return int(math.Round(sumOfGrades / float64(len(grades))))
 }
 
 // AttendancePercentage returns a percentage of class
@@ -32,17 +33,17 @@ func AverageGrade(grades []int) int {
 // The percentage of attendance is represented as a
 // floating-point number ranging from 0 to 1.
 func AttendancePercentage(attendance []bool) float64 {
-	var countTruths int
-
-	for _, i := range attendance {
-		if i {
-			countTruths += 1
-		}
-	}
-	if countTruths == 0 {
+	if len(attendance) == 0 {
 		return 0
 	}
-	return float64(countTruths) / float64(len(attendance))
+	var countAttendance int
+	for _, i := range attendance {
+		if i {
+			countAttendance += 1
+		}
+	}
+
+	return float64(countAttendance) / float64(len(attendance))
 }
 
 // FinalGrade returns a final grade achieved by a student,
@@ -59,13 +60,13 @@ func AttendancePercentage(attendance []bool) float64 {
 
 func FinalGrade(s Student) int {
 	avgGrade := AverageGrade(s.Grades)
-	attd := AttendancePercentage(s.Attendace)
+	attendancePercentage := AttendancePercentage(s.Attendace)
 
-	if attd < 0.6 || (avgGrade == 1 || s.Project == 1) {
+	if attendancePercentage < 0.6 || (avgGrade == 1 || s.Project == 1) {
 		return 1
 	}
 	var projectGrade = float64(avgGrade+s.Project) / 2
-	if attd < 0.8 {
+	if attendancePercentage < 0.8 {
 		projectGrade -= 1
 	}
 
@@ -77,9 +78,6 @@ func FinalGrade(s Student) int {
 // final grade.
 func GradeStudents(students []Student) map[string]uint8 {
 	gradedStudents := map[string]uint8{}
-	if len(students) == 0 {
-		return gradedStudents
-	}
 	for _, student := range students {
 		gradedStudents[student.Name] = uint8(FinalGrade(student))
 	}
