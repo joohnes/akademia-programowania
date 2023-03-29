@@ -46,6 +46,22 @@ func (f *Response) Save(writer io.Writer, url string) error {
 	}
 	return nil
 }
+func (f *Response) ReadData(url string) string {
+	var str strings.Builder
+	str.WriteString("================================================================\n")
+	str.WriteString("Date created: " + time.Now().Format(time.DateTime) + "\n")
+	str.WriteString("URL: " + url + "\n\n")
+
+	//for _, i := range f.Data.Children {
+	//	str.WriteString(i.Data.Title + "\n" + i.Data.URL + "\n\n")
+	//}
+	for id := 0; id < 5; id++ {
+		str.WriteString(f.Data.Children[id].Data.Title + "\n" + f.Data.Children[id].Data.URL + "\n\n")
+	}
+
+	str.WriteString("================================================================\n")
+	return str.String()
+}
 
 func (f *Response) Fetch(url string) error {
 	client := http.Client{Timeout: time.Second * 10}
