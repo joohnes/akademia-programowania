@@ -58,6 +58,7 @@ func multipleURLS(file io.Writer, urls []string) (err error) {
 		wg.Add(1)
 		i := i
 		go func(url string, wg *sync.WaitGroup) {
+			defer wg.Done()
 			err := fetchers[i].Fetch()
 			if err != nil {
 				log.Print(err)
@@ -66,7 +67,6 @@ func multipleURLS(file io.Writer, urls []string) (err error) {
 			if err != nil {
 				log.Print(err)
 			}
-			wg.Done()
 		}(url, wg)
 	}
 	wg.Wait()
