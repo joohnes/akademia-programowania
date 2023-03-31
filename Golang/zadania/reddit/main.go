@@ -31,15 +31,15 @@ func main() {
 	}
 }
 
-func oneURL(file io.Writer, url string) error {
-	f := fetcher.Response{}
+func oneURL(file io.Writer) error {
+	f := fetcher.Response{Url: "https://www.reddit.com/r/golang.json"}
 
 	//Fetching data
-	err := f.Fetch(url)
+	err := f.Fetch()
 	if err != nil {
 		return err
 	}
-	err = f.Save(file, url)
+	err = f.Save(file)
 	if err != nil {
 		return err
 	}
@@ -51,14 +51,14 @@ func multipleURLS(file io.Writer, urls []string) (err error) {
 	var str strings.Builder
 	wg := &sync.WaitGroup{}
 	//Creating fetcher array
-	for range urls {
-		fetchers = append(fetchers, fetcher.Response{})
+	for _, url := range urls {
+		fetchers = append(fetchers, fetcher.Response{Url: url})
 	}
 	for i, url := range urls {
 		wg.Add(1)
 		i := i
 		go func(url string, wg *sync.WaitGroup) {
-			err := fetchers[i].Fetch(url)
+			err := fetchers[i].Fetch()
 			if err != nil {
 				log.Print(err)
 			}

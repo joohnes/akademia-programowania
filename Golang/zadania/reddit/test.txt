@@ -1,65 +1,65 @@
 ================================================================
-Date created: 2023-03-29 18:08:02
-URL: http://www.reddit.com/r/poland.json
-
-Tanks for Ukraine
-https://i.redd.it/ughppek3ziqa1.png
-
-Who will you vote for in 2023 elections
-https://www.reddit.com/r/poland/comments/125nv3p/who_will_you_vote_for_in_2023_elections/
-
-Number of convenience stores: Poland vs Japan
-https://www.reddit.com/gallery/125drwl
-
-Izrael to nie Polska
-https://i.redd.it/bxiyh4r5ziqa1.jpg
-
-Does anyone remember these guys? In 2012 no one would have thought how the meaning of the flags together will change 10 years later
-https://i.redd.it/ewhmyyowzjqa1.jpg
-
-================================================================
-================================================================
-Date created: 2023-03-29 18:08:02
+Date created: 2023-03-31 10:21:52
 URL: https://www.reddit.com/r/golang.json
 
 Who's Hiring? - March 2023
 https://www.reddit.com/r/golang/comments/11fijrn/whos_hiring_march_2023/
 
-Multi million, persistent, synchronous, horizontally scaling WebSockets in Go
-https://www.druva.com/blog/websockets--scale-at-fractional-footprint-in-go
+As a Go programmer, what design pattern, programming techniques have you actually used, implemented regularly in your workplace which made your life much easier?
+https://www.reddit.com/r/golang/comments/126y75p/as_a_go_programmer_what_design_pattern/
 
-Integration Tests with Postgres
-https://www.storj.io/blog/go-integration-tests-with-postgres
+Building a Memory Efficient Hash Table in Golang
+https://www.dolthub.com/blog/2023-03-28-swiss-map/
 
-fluentassert - asking for feedback
-https://www.reddit.com/r/golang/comments/125ku5f/fluentassert_asking_for_feedback/
+Tell me it's my personal filter bubble. Why do people keep using Rust for building things where Go can be a perfect fit?
+https://www.reddit.com/r/golang/comments/126lif3/tell_me_its_my_personal_filter_bubble_why_do/
 
-Golang Command Line Arguments: Best Practices and Examples
-https://www.kosli.com/blog/understanding-golang-command-line-arguments/
+GoLand getting stuck when saving
+https://www.reddit.com/r/golang/comments/127ej2l/goland_getting_stuck_when_saving/
 
 ================================================================
 ================================================================
-Date created: 2023-03-29 18:08:02
+Date created: 2023-03-31 10:21:52
 URL: http://www.reddit.com/r/movies.json
 
-What is the Best Film You Watched Last Week? (03/15/23-03/22/23)
-https://www.reddit.com/r/movies/comments/11yksjm/what_is_the_best_film_you_watched_last_week/
+What is the Best Film You Watched Last Week? (03/22/23-03/29/23)
+https://www.reddit.com/r/movies/comments/125pr04/what_is_the_best_film_you_watched_last_week/
 
-Official Discussion Megathread (John Wick: Chapter 4 / A Good Person / Inside / Boston Strangler)
-https://www.reddit.com/r/movies/comments/1205taf/official_discussion_megathread_john_wick_chapter/
+Official Discussion - Dungeons &amp; Dragons: Honor Among Thieves [SPOILERS]
+https://www.reddit.com/r/movies/comments/1276mt9/official_discussion_dungeons_dragons_honor_among/
 
-Asteroid City - Official Trailer
-https://www.youtube.com/watch?v=FW88VBvQaiI
+Documentary On Carl Sagan, Brilliant Astronomer And ‘Cosmos’ Author, In The Works From National Geographic &amp; Seth MacFarlane
+https://deadline.com/2023/03/carl-sagan-national-geographic-documentary-film-project-announcement-producers-seth-macfarlane-nanette-burstein-ann-druyan-news-1235313335/
 
-In 1994, Jim Carrey starred in Ace Ventura, The Mask, and Dumb &amp; Dumber. Has any other actor had as good a calendar year?
-https://www.reddit.com/r/movies/comments/125nxoq/in_1994_jim_carrey_starred_in_ace_ventura_the/
+Francis Ford Coppola Wraps Production on Epic ‘Megalopolis’
+https://www.indiewire.com/2023/03/francis-ford-coppola-megalopolis-wraps-production-1234824438/
 
-What movie adaptation seemed to completely misunderstand its source material?
-https://www.reddit.com/r/movies/comments/1259can/what_movie_adaptation_seemed_to_completely/
+Why movies today look so dark today, in theaters and at home
+https://www.polygon.com/23661749/why-movies-look-dark-cinematography
 
 ================================================================
 ================================================================
-Date created: 2023-03-29 18:08:02
+Date created: 2023-03-31 10:21:52
+URL: http://www.reddit.com/r/poland.json
+
+It do be like that
+https://v.redd.it/t83g1q1ebzqa1
+
+I just saw it in Budapest
+https://i.redd.it/bz959nfn1xqa1.jpg
+
+Results of 2003 Polish European Union membership referendum
+https://i.redd.it/foi3fj6jouqa1.png
+
+Lenkija
+https://i.redd.it/2op61s8dxoqa1.jpg
+
+Recommendation for Polish podcasts
+https://www.reddit.com/r/poland/comments/127d3ij/recommendation_for_polish_podcasts/
+
+================================================================
+================================================================
+Date created: 2023-03-31 10:21:52
 URL: http://www.reddit.com/r/Polska.json
 
 Partie polityczne na /r/Polska - głosowanie pierwsza tura
@@ -68,13 +68,13 @@ https://www.reddit.com/r/Polska/comments/123jsik/partie_polityczne_na_rpolska_g�
 Cykliczny Kącik Muzyczny - CKM 04/23
 https://www.reddit.com/r/Polska/comments/1252whn/cykliczny_kącik_muzyczny_ckm_0423/
 
-Fact-checking na billboardach
-https://i.redd.it/iaac6408toqa1.jpg
+Konfederacja moments
+https://i.redd.it/3bl1odjpozqa1.jpg
 
-Babcia+
-https://i.redd.it/fnv1sbqpqmqa1.jpg
+I cyk się szykuje trzecia siła w sejmie xD
+https://i.imgur.com/owwjWjK.jpg
 
-Mentzen odważnie w Radiu Zet o 13 i 14 emeryturze.
-https://i.redd.it/jlh659flyoqa1.jpg
+Mentzen to debil.
+https://i.redd.it/lasq12gzqxqa1.png
 
 ================================================================

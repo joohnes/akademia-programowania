@@ -10,6 +10,7 @@ import (
 )
 
 type Response struct {
+	Url  string
 	Data struct {
 		Children []struct {
 			Data struct {
@@ -25,12 +26,11 @@ type RedditFetcher interface {
 	Save(io.Writer) error
 }
 
-func (f *Response) Save(writer io.Writer, url string) error {
+func (f *Response) Save(writer io.Writer) error {
 
 	var str strings.Builder
 	str.WriteString("================================================================\n")
 	str.WriteString("Date created: " + time.Now().Format(time.DateTime) + "\n")
-	str.WriteString("URL: " + url + "\n\n")
 
 	//for _, i := range f.Data.Children {
 	//	str.WriteString(i.Data.Title + "\n" + i.Data.URL + "\n\n")
@@ -63,13 +63,13 @@ func (f *Response) ReadData(url string) string {
 	return str.String()
 }
 
-func (f *Response) Fetch(url string) error {
+func (f *Response) Fetch() error {
 	client := http.Client{Timeout: time.Second * 10}
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 	defer cancel()
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, f.Url, nil)
 	if err != nil {
 		return err
 	}
