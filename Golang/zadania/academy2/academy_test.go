@@ -1,24 +1,31 @@
 package academy
 
 import (
-	"github.com/grupawp/akademia-programowania/Golang/zadania/academy2/mocks"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestGradeYear(t *testing.T) {
-	want := ""
-	mock := mocks.NewRepository(t)
-	mock.On("List").Return([]string{"a"}, nil)
+	mock := NewMockRepository(t)
+	mockStudent := NewMockStudent(t)
+	mock.On("List", uint8(2)).Return([]string{"John"}, nil)
+	mock.On("Get", "John").Return(mockStudent, nil)
+	mockStudent.On("FinalGrade").Return(5)
+	mockStudent.On("Year").Return(uint8(2))
+	mockStudent.On("Name").Return("John")
+	mock.On("Save", "John", uint8(3)).Return(nil)
 	got := GradeYear(mock, 2)
-	assert.Equal(t, want, got)
+	assert.Nil(t, got)
 }
 
 func TestGradeStudent(t *testing.T) {
-	want := ""
-	mock := mocks.NewRepository(t)
-	mockStudent := mocks.NewStudent(t)
-	mock.On("Get").Return(mockStudent, nil)
+	mock := NewMockRepository(t)
+	mockStudent := NewMockStudent(t)
+	mock.On("Get", "John").Return(mockStudent, nil)
+	mockStudent.On("FinalGrade").Return(5)
+	mockStudent.On("Year").Return(uint8(2))
+	mockStudent.On("Name").Return("John")
+	mock.On("Save", "John", uint8(3)).Return(nil)
 	got := GradeStudent(mock, "John")
-	assert.Equal(t, want, got)
+	assert.Nil(t, got)
 }
